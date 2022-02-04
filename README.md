@@ -271,4 +271,39 @@ namespace Exercises
 **output**
 ![image](https://user-images.githubusercontent.com/98379636/152483992-50b4a41d-42f0-46b4-bcb7-5880bc62cc82.png)
 
+**staic constructor**
+using System;
+
+namespace exercises
+{
+    class RegisterNum
+    {
+        int regNo;
+        static int startNum;
+        static RegisterNum()
+        {
+            startNum = 20210000;
+        }
+        RegisterNum()
+        {
+            regNo = ++startNum;
+        }
+        public static void Main(string[] args)
+        {
+            for(int i=0;i<100;i++)
+            {
+                RegisterNum Student = new RegisterNum();
+                Console.WriteLine("Student{0}:{1}", i+1, Student.regNo);
+            }
+        }
+
+    }
+}
+  
+**output**  ![image](https://user-images.githubusercontent.com/98379636/152486291-ffa03e60-af10-458c-92b7-1f0017fcb07a.png)
+![image](https://user-images.githubusercontent.com/98379636/152486702-e0307771-2345-440f-a2bf-d81a849666db.png)
+![image](https://user-images.githubusercontent.com/98379636/152486781-8be62ead-9afc-4b89-8d57-bf5fe3a2eae9.png)
+![image](https://user-images.githubusercontent.com/98379636/152486878-6a6da3bc-f1c5-465d-b5e4-ec43c45fbe3d.png)
+
+   
 
