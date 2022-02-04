@@ -228,3 +228,47 @@ namespace exercises
 <br>
 **  output**
 ![image](https://user-images.githubusercontent.com/98379636/152481048-5eb4df7d-1223-475a-8e64-111b6deb2496.png)
+
+
+
+**implement principles of Delegates**
+using System;
+namespace Exercises
+{
+    class Delegates
+    {
+        delegate string UppercaseDelegate(string input);
+        static string UppercaseFirst(string input)
+        {
+            char[] buffer = input.ToCharArray();
+            buffer[0] = char.ToUpper(buffer[0]);
+            return new string(buffer);
+        }
+        static string UppercaseLast(string input)
+        {
+            char[] buffer = input.ToCharArray();
+            buffer[buffer.Length-1]= char.ToUpper(buffer[buffer.Length-1]);
+            return new string(buffer);
+        }
+        static string UppercaseAll(string input)
+        {
+            return input.ToUpper();
+        }
+        static void WriteOutput(string input,UppercaseDelegate del)
+        {
+            Console.WriteLine("Input String:{0}", input);
+            Console.WriteLine("Output String:{0}", del(input));
+        }
+        static void Main()
+        {
+            WriteOutput("tom", new UppercaseDelegate(UppercaseFirst));
+            WriteOutput("tom", new UppercaseDelegate(UppercaseLast));
+            WriteOutput("tom", new UppercaseDelegate(UppercaseAll));
+        }
+    }
+}
+<br>
+**output**
+![image](https://user-images.githubusercontent.com/98379636/152483992-50b4a41d-42f0-46b4-bcb7-5880bc62cc82.png)
+
+
