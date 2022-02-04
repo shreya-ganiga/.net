@@ -121,3 +121,110 @@ namespace Exercises
 **  output **
 ![image](https://user-images.githubusercontent.com/98379636/152475266-4348153d-0015-4262-a63a-c5505976fc99.png)
 
+
+
+**  multilevel inheritance**
+using System;
+namespace exercises
+{
+    class PersonalDetails
+    {
+        string name;
+        int age;
+        string gender;
+        public PersonalDetails(string name, int age, string gender)
+        {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        public virtual void Display()
+        {
+            Console.WriteLine("\n______PERSONAL DETAILS____\n");
+            Console.WriteLine("Name       :" + name);
+            Console.WriteLine("Age         :" + age);
+            Console.WriteLine("Gender     :" + gender);
+        }
+    }
+    class CourseDetails : PersonalDetails
+    {
+        int regNO;
+        String Course;
+        int semester;
+        public CourseDetails(string name, int age, string gender, int regNo, string course, int semester) : base(name, age, gender)
+        {
+            this.regNO = regNo;
+            this.Course = course;
+            this.semester = semester;
+        }
+        public override void Display()
+        {
+            base.Display();
+            Console.WriteLine("\n-----COURSE DETAILS-----\n");
+            Console.WriteLine("Register Number:" + regNO);
+            Console.WriteLine("Course    :" + Course);
+            Console.WriteLine("semester     :" + semester);
+        }
+
+    }
+    class MarksDetails : CourseDetails
+    {
+        int[] marks = new int[5];
+        int total;
+        float average;
+        string grade;
+        int flagFail;
+        public MarksDetails(string name, int age, string gender, int regNo, string course, int semester, int[]marks): base(name, age, gender, regNo, course, semester)
+        {
+            total = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                this.marks[i] = marks[i];
+                total += marks[i];
+                if (marks[i] < 35)
+                {
+                    flagFail = 1;
+                }
+            }
+            Calculate();
+        }
+        private void Calculate()
+        {
+            average = total / 5;
+            if (flagFail == 1 || average < 40)
+                grade = "Fail";
+            else if (average >= 70)
+                grade = "Distinction";
+            else if (average >= 60)
+                grade = "First Class";
+            else if (average >= 50)
+                grade = "Second Class";
+            else
+                grade = "Pass Class";
+        }
+        public override void Display()
+        {
+            base.Display();
+            Console.WriteLine("\n-----MARKS DETAILS____\n");
+            Console.Write("Marks in 5 subjects:");
+            for (int i = 0; i < 5; i++)
+                Console.Write(marks[i] + "  ");
+            Console.WriteLine();
+            Console.WriteLine("Total     :" + total);
+            Console.WriteLine("Average     :" + average);
+            Console.WriteLine("Grade     :" + grade);
+        }
+
+    }
+    class MulitiLevel
+    {
+    public static void Main(string[] args)
+    {
+        MarksDetails Student1 = new MarksDetails("Abhijith", 22, "male",20190001, "MCA", 5, new int[] { 77, 80, 98, 95, 90 });
+        Student1.Display();
+    }
+}
+}
+<br>
+**  output**
+![image](https://user-images.githubusercontent.com/98379636/152481048-5eb4df7d-1223-475a-8e64-111b6deb2496.png)
