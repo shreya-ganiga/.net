@@ -1,3 +1,4 @@
+
 # .net
 ** Amicable numbers**
 using System;<br>
@@ -340,5 +341,59 @@ namespace exercises
 ![image](https://user-images.githubusercontent.com/98379636/152489925-26288167-4084-4819-87b8-33a2f0659163.png)
 
 
-   
+   *sumofvaluesondiagonalmatrix***
+   using System;
+namespace Excercises
+{
+    class SumOfDiagonals
+    {
+        static void Main(String[] args)
+        {
+            int MaxRow, Maxcol, sum = 0;
+            int[,] Matrix;
+            Console.WriteLine("\n_____SUM OF DIAGONAL OF MATRIX_______\n");
+            Console.WriteLine("\nenter the number of rows:");
+            MaxRow = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nenter the number of coloumns:");
+            Maxcol = Convert.ToInt32(Console.ReadLine());
+            if(MaxRow!=Maxcol)
+            {
+                Console.WriteLine("\nthe dimensions entered are not of squarematrix");
+                Console.WriteLine("\nexiting the program");
+                return;
+            }
+            Matrix = new int[MaxRow, Maxcol];
+            for(int i=0;i<MaxRow;i++)
+            {
+                for(int j=0;j<MaxRow;j++)
+                {
+                    Console.Write("\nenter the({0},{1})th element of the matrix:",(i + 1),(j + 1));
+                     Matrix[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("\nthe entered matrix is");
+            for(int i=0;i<MaxRow;i++)
+            {
+                for(int j=0;j<Maxcol;j++)
+                {
+                   Console.Write(" "+ Matrix[i,j]);
+        
+
+                    if(i==j)
+                    {
+                        sum += Matrix[i,j];
+                    }
+                }
+                Console.WriteLine();
+
+            }
+            Console.WriteLine("\nthe sum of diagonal is"  +sum);
+
+        }
+    }
+}
+<br>
+**output**
+![image](https://user-images.githubusercontent.com/98379636/154421283-aae70eb0-d342-4a9d-bbe2-2365c083533a.png)
+
 
