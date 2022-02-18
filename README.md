@@ -472,3 +472,5 @@ namespace Excercises
 
 **output**
 ![image](https://user-images.githubusercontent.com/98379636/154620994-bb709605-f476-402e-be65-e898f7bd4007.png)
+![image](https://user-images.githubusercontent.com/98379636/154622965-74eee68a-103f-49cb-b786-e6e0cc9a7a8d.png)
+
