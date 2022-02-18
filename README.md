@@ -1,4 +1,4 @@
-
+    q
 # .net
 ** Amicable numbers**
 using System;<br>
@@ -622,6 +622,7 @@ namespace Excercises
 <br>
 **output**
 
+![image](https://user-images.githubusercontent.com/98379636/154633466-a0bd6bf1-fee6-4e8f-a28f-4bcdff0a1540.png)
 
 
 
