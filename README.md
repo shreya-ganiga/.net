@@ -509,10 +509,78 @@ namespace Excercises
         }
     }
 }
+<br>
 **output**
 ![image](https://user-images.githubusercontent.com/98379636/154625795-617c45bf-94b0-4912-b6f5-ce91defce0c0.png)
 
 ![image](https://user-images.githubusercontent.com/98379636/154626059-7fb2382a-29aa-4646-94a4-ac3c10aa47d5.png)
+**impement icomparable interface**
+using System;
+namespace Excercises
+{
+    class Fraction:IComparable
+    {
+        int z, n;
+        public Fraction(int z,int n)
+        {
+            this.z = z;
+            this.n = n;
+        }
+        public static Fraction operator +(Fraction a,Fraction b)
+        {
+            return new Fraction(a.z * b.n + a.n * b.z, a.n * b.n);
+
+        }
+        public static Fraction operator *(Fraction a,Fraction b)
+        {
+            return new Fraction(a.z * b.z, a.n * b.n);
+        }
+        public int CompareTo(object obj)
+        {
+            Fraction f = (Fraction)obj;
+            if ((float)z /n <(float)f.z / f.n)
+                return -1;
+            else if ((float)z / n > (float)f.z / f.n)
+                return 1;
+            else
+                return 0;
+        }
+        public override string ToString()
+      
+            {
+                return z + "/" + n;
+
+
+            }
+        }
+        class ICompInterface
+        {
+            public static void Main()
+            {
+                Fraction[] a = {
+                               new Fraction(5,2),
+                              new Fraction(29, 6),
+                               new Fraction(4, 5),
+                               new Fraction(10, 8),
+                               new Fraction(34, 7)
+                           };
+        Array.Sort(a);
+            
+                Console.WriteLine("implementing the IComparableInterface in"+"Displaying Fractions:");
+                foreach(Fraction f in a)
+            {
+                Console.WriteLine(f + "  ");
+            }
+            Console.WriteLine();
+              Console.ReadLine();
+            }
+        }
+    }
+
+    
+<br>
+**output**
+
 
 
 
