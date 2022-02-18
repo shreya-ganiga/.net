@@ -580,6 +580,8 @@ namespace Excercises
     
 <br>
 **output**
+![image](https://user-images.githubusercontent.com/98379636/154630890-2ec8cd8c-0b03-4231-b4e1-b0aa0cf673f0.png)
+
 
 
 
