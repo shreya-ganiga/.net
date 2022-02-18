@@ -475,4 +475,40 @@ namespace Excercises
 ![image](https://user-images.githubusercontent.com/98379636/154622965-74eee68a-103f-49cb-b786-e6e0cc9a7a8d.png)
 ![image](https://user-images.githubusercontent.com/98379636/154623056-8eb5e175-381e-465d-bf85-8df4f2b59e23.png)
 
+**program to perform file comparision**
+using System;
+using System.IO;
+namespace Excercises
+{
+    class FileRead
+    {
+        public static void Main()
+        {
+            string file1;
+            string file2;
+            Console.Write("enter the first file path:");
+            file1 = Console.ReadLine();
+            Console.WriteLine("enter the second file path:");
+            file2 = Console.ReadLine();
+            if(!File.Exists(file1))
+            {
+                Console.WriteLine("first file does not exist!");
+            }
+            else if(!File.Exists(file2))
+            {
+                Console.WriteLine("second file does not exist!");
+            }
+            else if(File.ReadAllText(file1)==File.ReadAllText(file2))
+            {
+                Console.WriteLine("both file contatin the same contents:");
+            }
+            else
+            {
+                Console.WriteLine("contents of files are not same:");
+            }
+        }
+    }
+}
+**output**
+
 
