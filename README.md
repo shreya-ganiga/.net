@@ -831,6 +831,30 @@ public class SumExample
 ![image](https://user-images.githubusercontent.com/98379636/155669511-9cbf6e4c-6630-426c-9ab5-fab2b5103100.png)
 
 
+**reverse of a number**
+using System;
+public class ReverseExample
+{
+    public static void Main(String[] args)
+    {
+        int n, reverse = 0, rem;
+        Console.Write("enter a number:");
+        n = int.Parse(Console.ReadLine());
+        while(n!=0)
+        {
+            rem = n % 10;
+            reverse = reverse * 10 + rem;
+            n /= 10;
+        }
+        Console.Write("reversed number:" + reverse);
+    }
+}
+<br>
+**output**
+
+
+![image](https://user-images.githubusercontent.com/98379636/155670861-035ebbdc-ac36-483d-9c3f-6311ef9d1098.png)
+
 
 
     
