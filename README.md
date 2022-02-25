@@ -300,6 +300,7 @@ namespace exercises
 
     }
 }
+<br>
   
 **output**  ![image](https://user-images.githubusercontent.com/98379636/152486291-ffa03e60-af10-458c-92b7-1f0017fcb07a.png)
 ![image](https://user-images.githubusercontent.com/98379636/152486702-e0307771-2345-440f-a2bf-d81a849666db.png)
@@ -469,6 +470,7 @@ namespace Excercises
 
         }
     }
+    <br>
 
 **output**
 ![image](https://user-images.githubusercontent.com/98379636/154620994-bb709605-f476-402e-be65-e898f7bd4007.png)
@@ -672,7 +674,35 @@ public class Age
         }
     }
 }
+<br>
 **output**
 ![image](https://user-images.githubusercontent.com/98379636/155660271-4cd82008-d46f-4e33-960f-1e274b31be8c.png)
+
+**fibonacci number**
+using System;
+public class FibonacciExample
+{
+    public static void Main(string[] args)
+    {
+        int n1 = 0,n2 = 1,n3,i,number;
+        Console.WriteLine("enter the number of elements:");
+        number = int.Parse(Console.ReadLine());
+        Console.Write(n1 + " " + n2 + " ");
+        for(i=2;i<number;i++)
+        {
+            n3 = n1 + n2;
+            Console.Write(n3 + " ");
+            n1 = n2;
+            n2 = n3;
+        }
+    }
+}
+<br>
+**output**
+![image](https://user-images.githubusercontent.com/98379636/155662294-d0050b36-53ad-4bec-8aa5-aec903bffa64.png)
+<br>
+
+
+
 
 
