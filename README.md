@@ -625,4 +625,54 @@ namespace Excercises
 ![image](https://user-images.githubusercontent.com/98379636/154633466-a0bd6bf1-fee6-4e8f-a28f-4bcdff0a1540.png)
 
 
+**demonstrate exceptionhandling**
+using System;
+
+namespace Excercises
+{
+    class ExceptionHandling
+    {
+        static void Main(string[] args)
+        {
+            Age a = new Age();
+            try
+            {
+                a.displayAge();
+            }
+            catch (AgeIsNegativeException e)
+            {
+                Console.WriteLine("AgeIsNegativeException:{0}",e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("execution of finally block is done");
+            }
+        }
+    }
+}
+public class AgeIsNegativeException:Exception
+{
+    public AgeIsNegativeException(string message):base(message)
+    {
+
+    }
+}
+public class Age
+{
+    int age = -5;
+    public void displayAge()
+    {
+        if(age<0)
+        {
+            throw (new AgeIsNegativeException("Age cannot be negative"));
+        }
+        else
+        {
+            Console.WriteLine("Age is:{0}", age);
+        }
+    }
+}
+**output**
+![image](https://user-images.githubusercontent.com/98379636/155660271-4cd82008-d46f-4e33-960f-1e274b31be8c.png)
+
 
