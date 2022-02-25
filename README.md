@@ -759,7 +759,27 @@ public class pallindromeExample<br>
 ![image](https://user-images.githubusercontent.com/98379636/155665472-96e3aaf8-0909-456b-a473-b7994ddab5a3.png)
 
 
-   
+  **factorial of a number**
+  using System;
+public class FactorialExample
+{
+    public static void Main(String[] args)
+    {
+        int i, fact = 1, number;
+        Console.Write("enter anu number:");
+        number = int.Parse(Console.ReadLine());
+        for(i=1;i<=number;i++)
+        {
+            fact = fact * i;
+        }
+        Console.Write("factorial of" +number+ "is:"+fact);
+    }
+}
+<br>
+**output**
+![image](https://user-images.githubusercontent.com/98379636/155667177-5ed9d53b-772f-4b5f-8257-7bb1c66b07e8.png)
+
+
    
 
 
