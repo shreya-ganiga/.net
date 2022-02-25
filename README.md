@@ -731,6 +731,37 @@ public class primeNumberExample
 ![image](https://user-images.githubusercontent.com/98379636/155663866-686db3b2-6c63-41a2-ba6a-8491b5d29c4b.png)
 
 <br>
+**check pallindrome or not**
+using System;using System;<br>
+public class pallindromeExample<br>
+{<br>
+    public static void Main(String[] args)<br>
+    {<br>
+        int n, r, sum = 0, temp;<br>
+        Console.Write("enter the number:");<br>
+        n = int.Parse(Console.ReadLine());<br>
+        temp = n;<br>
+        while(n>0)<br>
+        {<br>
+            r = n % 10;<br>
+            sum = (sum * 10) + r;<br>
+            n = n / 10;<br>
+        }<br>
+        if (temp == sum)<br>
+            Console.Write("number is pallindrome");<br>
+        else<br>
+            Console.Write("number is not pallindrome");<br>
+    }<br>
+}<br>
+
+**output**
+![image](https://user-images.githubusercontent.com/98379636/155665421-0ff97220-a1cb-4d67-8d5f-53df4ac6f318.png)
+![image](https://user-images.githubusercontent.com/98379636/155665472-96e3aaf8-0909-456b-a473-b7994ddab5a3.png)
+
+
+   
+   
+
 
     
     
