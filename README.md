@@ -856,6 +856,40 @@ public class ReverseExample
 ![image](https://user-images.githubusercontent.com/98379636/155670861-035ebbdc-ac36-483d-9c3f-6311ef9d1098.png)
 
 
+**binary triangle**
+using System;
+
+namespace Excercises
+{
+    class BinaryTriangle
+    {
+        static void Main(String[] args)
+        {
+            int number, digit = 1;
+            Console.WriteLine("\nenter the number of lines");
+            number = Convert.ToInt32(Console.ReadLine());
+            for(int i=1;i<=number;i++)
+            {
+                for(int space=number-i;space>0;space--)
+                {
+                    Console.Write("  ");
+                }
+                for(int j=0;j<i;j++)
+                {
+                    Console.Write(digit + " ");
+                    digit = (digit == 1) ? 0 : 1;
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+}
+<br>
+**output**
+
+
+![image](https://user-images.githubusercontent.com/98379636/156502265-7466f55f-d047-450d-88fa-db6f8c27e410.png)
+
 
     
     
