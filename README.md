@@ -890,6 +890,35 @@ namespace Excercises
 
 ![image](https://user-images.githubusercontent.com/98379636/156502265-7466f55f-d047-450d-88fa-db6f8c27e410.png)
 
+**create a Graycode**
+using System;
+namespace Excercises
+{
+    class Graycode
+    {
+        static int getGray(int n)
+        {
+            return n ^ (n >> 1);
+        }
+        static void Main(String[] args)
+        {
+            int InputNum, GrayNum;
+            Console.Write("\nenter the decimal number:");
+            InputNum = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nbinary equvailent of {0}:{1}", InputNum, Convert.ToString(InputNum, 2));
+            GrayNum = getGray(InputNum);
+            Console.WriteLine("\n Gray code equivalent of {0}:{1}", InputNum, Convert.ToString(GrayNum, 2));
+        }
+    }
+}
+<br>
+
+**ouput**
+
+
+![image](https://user-images.githubusercontent.com/98379636/156503859-9f569d6b-ed9a-4f42-9dd5-4a9ac569b4a4.png)
+
+
 
     
     
