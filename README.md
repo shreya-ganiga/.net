@@ -1,4 +1,4 @@
-    q
+    
 # .net
 ** Amicable numbers**
 using System;<br>
@@ -44,39 +44,7 @@ namespace Excercises<br>
 }<br>
 ** output**
 ![image](https://user-images.githubusercontent.com/98379636/152292399-7fadfbb8-0f6f-4402-a150-d1f65bd0719c.png)
-**BINARY TRIANGLE**
-using System;<br>
-namespace Excercises<br>
-{<br><br>
-    class BinaryTriangle<br>
-        {<br>
- 
-           static void Main(String[] args)<br>
-        { <br>
-            
-          int number,digit = 1;<br>
-            Console.Write("\nEnter the number of lines:");<br>
-        number = Convert.ToInt32(Console.ReadLine());<br>
-        for (int i = 1; i <= number;i++)<br>
-
-            {<br>
-                for (int space = number-i; space > 0; space--)<br>
-                {<br>
-                    Console.Write("  ");<br><br>
-                }<br>
-
-
-                for (int j = 0; j < i; j++)<br>
-                {<br>
-                    Console.Write(digit + "  ");<br>
-                    digit=(digit== 1) ? 0 : 1;<br>
-
-                }<br>
-              Console.Write("\n");<br>
-    }<br>
-}<br>
-}<br>
-}<br>
+  
     
 **   volume**
 using System;
