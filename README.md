@@ -88,6 +88,8 @@ namespace Exercises
 }
 <br>
 **  output **
+
+
 ![image](https://user-images.githubusercontent.com/98379636/152475266-4348153d-0015-4262-a63a-c5505976fc99.png)
 
 
@@ -196,6 +198,9 @@ namespace exercises
 }
 <br>
 **  output**
+
+
+
 ![image](https://user-images.githubusercontent.com/98379636/152481048-5eb4df7d-1223-475a-8e64-111b6deb2496.png)
 
 
@@ -238,6 +243,8 @@ namespace Exercises
 }
 <br>
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/152483992-50b4a41d-42f0-46b4-bcb7-5880bc62cc82.png)
 
 **staic constructor**
@@ -270,9 +277,14 @@ namespace exercises
 }
 <br>
   
-**output**  ![image](https://user-images.githubusercontent.com/98379636/152486291-ffa03e60-af10-458c-92b7-1f0017fcb07a.png)
+**output** 
+
+![image](https://user-images.githubusercontent.com/98379636/152486291-ffa03e60-af10-458c-92b7-1f0017fcb07a.png)
+
 ![image](https://user-images.githubusercontent.com/98379636/152486702-e0307771-2345-440f-a2bf-d81a849666db.png)
+
 ![image](https://user-images.githubusercontent.com/98379636/152486781-8be62ead-9afc-4b89-8d57-bf5fe3a2eae9.png)
+
 ![image](https://user-images.githubusercontent.com/98379636/152486878-6a6da3bc-f1c5-465d-b5e4-ec43c45fbe3d.png)
 
 
@@ -307,6 +319,8 @@ namespace exercises
 }
 <br>
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/152489925-26288167-4084-4819-87b8-33a2f0659163.png)
 
 
@@ -363,6 +377,8 @@ namespace Excercises
 }
 <br>
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/154421283-aae70eb0-d342-4a9d-bbe2-2365c083533a.png)
 
 ![image](https://user-images.githubusercontent.com/98379636/154421781-fbe390bf-f2fd-43db-af2f-89dcf87a434b.png)
@@ -441,8 +457,12 @@ namespace Excercises
     <br>
 
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/154620994-bb709605-f476-402e-be65-e898f7bd4007.png)
+
 ![image](https://user-images.githubusercontent.com/98379636/154622965-74eee68a-103f-49cb-b786-e6e0cc9a7a8d.png)
+
 ![image](https://user-images.githubusercontent.com/98379636/154623056-8eb5e175-381e-465d-bf85-8df4f2b59e23.png)
 
 **program to perform file comparision**
@@ -481,9 +501,13 @@ namespace Excercises
 }
 <br>
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/154625795-617c45bf-94b0-4912-b6f5-ce91defce0c0.png)
 
 ![image](https://user-images.githubusercontent.com/98379636/154626059-7fb2382a-29aa-4646-94a4-ac3c10aa47d5.png)
+
+
 **impement icomparable interface**
 using System;
 namespace Excercises
@@ -550,11 +574,11 @@ namespace Excercises
     
 <br>
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/154630890-2ec8cd8c-0b03-4231-b4e1-b0aa0cf673f0.png)
 
 **threadpools**
-
-
 using System;
 using System.Threading;
 namespace Excercises
@@ -644,6 +668,8 @@ public class Age
 }
 <br>
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/155660271-4cd82008-d46f-4e33-960f-1e274b31be8c.png)
 
 **fibonacci number**
@@ -667,8 +693,11 @@ public class FibonacciExample
 }
 <br>
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/155662294-d0050b36-53ad-4bec-8aa5-aec903bffa64.png)
 <br>
+
 **to check prime number**
 using System;
 public class primeNumberExample
@@ -694,6 +723,7 @@ public class primeNumberExample
 }
 <br>
 **output**
+
 ![image](https://user-images.githubusercontent.com/98379636/155663839-d5f33df1-8e2c-4e3e-bd09-c027d74f594b.png)
 
 ![image](https://user-images.githubusercontent.com/98379636/155663866-686db3b2-6c63-41a2-ba6a-8491b5d29c4b.png)
@@ -723,7 +753,10 @@ public class pallindromeExample<br>
 }<br>
 
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/155665421-0ff97220-a1cb-4d67-8d5f-53df4ac6f318.png)
+
 ![image](https://user-images.githubusercontent.com/98379636/155665472-96e3aaf8-0909-456b-a473-b7994ddab5a3.png)
 
 
@@ -745,6 +778,8 @@ public class FactorialExample
 }
 <br>
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/155667177-5ed9d53b-772f-4b5f-8257-7bb1c66b07e8.png)
 
 **check armstrong number**
@@ -771,6 +806,8 @@ public class ArmstrongExample
     }
 }<br>
 **output**
+
+
 ![image](https://user-images.githubusercontent.com/98379636/155668415-aae4ef39-a111-4d2a-b7c6-dfe800c569a0.png)
 
 ![image](https://user-images.githubusercontent.com/98379636/155668442-990b5348-6f3e-4285-a5d1-3abe944bd0b6.png)
@@ -796,6 +833,7 @@ public class SumExample
 }
 <br>
 **output**
+
 ![image](https://user-images.githubusercontent.com/98379636/155669511-9cbf6e4c-6630-426c-9ab5-fab2b5103100.png)
 
 
