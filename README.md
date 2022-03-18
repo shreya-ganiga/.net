@@ -1135,6 +1135,84 @@ namespace WindowsFormsApp15
 **output**
 ![image](https://user-images.githubusercontent.com/98379636/158943749-c0399b8e-a50c-4255-99b8-ab5c0bc6aeda.png)
 
+**convert digit to words**
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp4
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = NumtoWord(long.Parse(textBox1.Text));
+            label1.Visible = true;
+        }
+        public string NumtoWord(long number)
+        {
+            string word = " ";
+            if(number==0)
+            {
+                return "zero";
+            }
+            if(number<0)
+            {
+                return "Minus"+Math.Abs(number);
+            }
+            if(number/10000000>0)
+            {
+                word += NumtoWord(number / 100000) + "lacs";
+                number %= 100000;
+            }
+            if(number/1000>0)
+            {
+                word += NumtoWord(number / 1000) + "thousand";
+                number %= 1000;
+            }
+            if(number/100>0)
+            {
+                word += NumtoWord(number / 100) + "hundrend";
+                number %= 100;
+            }
+            if (number > 0)
+            {
+                string[] units = new string[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine","ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
+                string[] Tens = new string[] { "zero", "TEN", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninty" };
+                if(number<20)
+                {
+                    word += units[number];
+                }
+                else
+                {
+                    word += Tens[number / 10];
+                    if(number%10>0)
+                    {
+                        word += units[number % 10];
+                    }
+                }
+            }
+            return word;
+        }
+    }
+}
+<br>
+**output**
+![image](https://user-images.githubusercontent.com/98379636/158945317-a60cbb17-409a-4800-9a4a-90cab31321d3.png)
+
+
+
 
 
 
