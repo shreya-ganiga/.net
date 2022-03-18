@@ -980,6 +980,116 @@ namespace Exrecises
 ![image](https://user-images.githubusercontent.com/98379636/156510180-170a8728-67fb-4d7c-9069-1082bd310696.png)
 
 
+**perform reversal padding and trimming operations**
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp13
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string inputstring, revstr = " ";
+            int Length;
+            inputstring = txtInput.Text;
+            Length = inputstring.Length - 1;
+            while(Length>=0)
+            {
+                revstr = revstr + inputstring[Length];
+                Length--;
+            }
+            MessageBox.Show("reverse string is:" + revstr, "Result");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string inputstring;
+            inputstring = txtInput.Text;
+            MessageBox.Show("the string after Trimming:" + inputstring.Trim(), "Result");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string inputstring;
+            inputstring = txtInput.Text;
+            inputstring = inputstring.PadLeft(10, '*');
+            inputstring = inputstring.PadRight(15, '*');
+            MessageBox.Show("string after padding:" + inputstring, "Result");
+        }
+    }
+}
+<br>
+**output**
+![image](https://user-images.githubusercontent.com/98379636/158942819-ff27c963-2959-4df3-83ff-664f26bba98d.png)
+![image](https://user-images.githubusercontent.com/98379636/158942905-99abb3a9-e346-4fb4-9293-8def417124de.png)
+
+**program to create progressbar control**
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp14
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.WorkerReportsProgress = true;
+            backgroundWorker1.RunWorkerAsync();
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for(int i=1;i<=100;i++)
+            {
+                Thread.Sleep(50);
+
+
+                backgroundWorker1.ReportProgress(i);
+            }
+
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+            this.Text = "progress:" + e.ProgressPercentage.ToString() + "%";
+
+        }
+    }
+}
+<br>
+**output**
+![image](https://user-images.githubusercontent.com/98379636/158943370-a4b4a9a3-10f4-46a8-bff7-b1df3439f8de.png)
+
+
+
+
 
 
     
