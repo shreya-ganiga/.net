@@ -1408,189 +1408,192 @@ namespace reversepaddingtrimming<br>
                     msg = "Value found";<br>
                 }<br>
                 else<br>
-                {
-                    msg = "Value not found";
-                }
-            }
-            MessageBox.Show(msg);
-        }
-        void drawTree()
-        {
-            if (root != null)
-                pictureBox1.Image = root.Draw();
-            else
-                pictureBox1.Image = null;
-            this.Update();
-        }
-    }
-}
-class Node
-{
-    internal Node left { get; set; }
-    internal Node right { get; set; }
-    internal int value;
-    internal int center = 12;
-    private static Bitmap nodeBg = new Bitmap(30, 25);
-    private static Font font = new Font("Arial", 14);
-    internal Node(int value)
-    {
-        this.value = value;
-    }
-    internal bool Add(int value)
-    {
-        Node node = new Node(value);
-        if (value < this.value)
-        {
-            if (this.left == null)
-            {
-                this.left = node;
-                return true;
-            }
-            else
-                return this.left.Add(value);
-        }
-        else if (value > this.value)
-        {
-            if (this.right == null)
-            {
-                this.right = node;
-                return true;
-            }
-            else
-                return this.right.Add(value);
-        }
-        return false;
-    }
-    internal bool Remove(int value, Node parent, ref Node root)
-    {
-        if (value < this.value)
-        {
-            if (left != null)
-            {
-                return left.Remove(value, this, ref root);
-            }
-        }
-        else if (value > this.value)
-        {
-            if (right != null)
-            {
-                return right.Remove(value, this, ref root);
-            }
-        }
-        else if (value == this.value)
-        {
-            bool isLeft = (this == parent.left);
-            if (left == null && right == null)
+                {<br>
+                    msg = "Value not found";<br>
+                }<br>
+            }<br>
+            MessageBox.Show(msg);<br>
+        }<br>
+        void drawTree()<br>
+        {<br>
+            if (root != null)<br>
+                pictureBox1.Image = root.Draw();<br>
+            else<br>
+                pictureBox1.Image = null;<br>
+            this.Update();<br>
+        }<br>
+    }<br>
+}<br>
+class Node<br>
+{<br>
+    internal Node left { get; set; }<br>
+    internal Node right { get; set; }<br>
+    internal int value;<br>
+    internal int center = 12;<br>
+    private static Bitmap nodeBg = new Bitmap(30, 25);<br>
+    private static Font font = new Font("Arial", 14);<br>
+    internal Node(int value)<br>
+    {<br>
+        this.value = value;<br>
+    }<br>
+    internal bool Add(int value)<br>
+    {<br>
+        Node node = new Node(value);<br>
+        if (value < this.value)<br>
+        {<br>
+            if (this.left == null)<br>
+            {<br>
+                this.left = node;<br>
+                return true;<br>
+            }<br>
+            else<br>
+                return this.left.Add(value);<br>
+        }<br>
+        else if (value > this.value)<br>
+        {<br>
+            if (this.right == null)<br>
+            {<br>
+                this.right = node;<br>
+                return true;<br>
+            }<br>
+            else<br>
+                return this.right.Add(value);<br>
+        }<br>
+        return false;<br>
+    }<br>
+    internal bool Remove(int value, Node parent, ref Node root)<br>
+    {<br>
+        if (value < this.value)<br>
+        
+        {<br>
+            if (left != null)<br>
+            {<br>
+                return left.Remove(value, this, ref root);<br>
+            }<br>
+        }<br>
+        else if (value > this.value)<br>
+        {<br>
+            if (right != null)<br>
+            {<br>
+            {<br>
+                return right.Remove(value, this, ref root);<br>
+             
+            }<br>
+        }<br>
+        else if (value == this.value)<br>
+        {<br>
+            bool isLeft = (this == parent.left);<br>
+            if (left == null && right == null)<br>
 
-            {
-                if (root == this)
-                    root = null;
-                else
-                if (isLeft) parent.left = null; else parent.right = null;
-            }
-            else if (right == null)
-            {
-                if (isLeft) parent.left = left; else parent.right = left;
-                if (root == this)
-                    root = left;
-            }
-            else
-            {
-                if (right.left == null)
-                {
-                    right.left = left;
-                    if (isLeft) parent.left = right;
-                    else
-                        parent.right = right;
-                    if (root == this)
-                        root = right;
-                }
-                else
-                {
-                    Node node = right;
-                    while (node.left.left != null)
-                        node = node.left;
-                    Console.WriteLine("Node: " + node.value);
-                    this.value = node.left.value;
-                    Console.WriteLine("here");
-                    node.left = null;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-    public Image Draw()
-    {
-        Size lSize = new Size(nodeBg.Width / 2, 0);
-        Size rSize = new Size(nodeBg.Width / 2, 0);
-        Image lNodeImg = null;
-        Image rNodeImg = null;
-        int lCenter = 0, rCenter = 0;
+            {<br>
+                if (root == this)<br>
+                    root = null;<br>
+                else<br>
+                if (isLeft) parent.left = null; else parent.right = null;<br>
+            }<br>
+            else if (right == null)<br>
+            {<br>
+                if (isLeft) parent.left = left; else parent.right = left;<br>
+                if (root == this)<br>
+                    root = left;<br>
+            }<br>
+            else<br>
+            {<br>
+                if (right.left == null)<br>
+                {<br>
+                    right.left = left;<br>
+                    if (isLeft) parent.left = right;<br>
+                    else<br>
+                        parent.right = right;<br>
+                    if (root == this)<br>
+                        root = right;<br>
+                }<br>
+                else<br>
+                {<br>
+                    Node node = right;<br>
+                    while (node.left.left != null)<br>
+                        node = node.left;<br>
+                    Console.WriteLine("Node: " + node.value);<br>
+                    this.value = node.left.value;<br>
+                    Console.WriteLine("here");<br>
+                    node.left = null;<br>
+                }<br>
+            }<br>
+            return true;<br>
+        }<br>
+        return false;<br>
+    }<br>
+    public Image Draw()<br>
+    {<br>
+        Size lSize = new Size(nodeBg.Width / 2, 0);<br>
+        Size rSize = new Size(nodeBg.Width / 2, 0);<br>
+        Image lNodeImg = null;<br>
+        Image rNodeImg = null;<br>
+        int lCenter = 0, rCenter = 0;<br>
 
-        if (this.left != null)
+        if (this.left != null)<br>
             {
-            lNodeImg = left.Draw();
-            lSize = lNodeImg.Size;
-            this.center = lSize.Width;
-            lCenter = left.center;
-        }
-            if (this.right != null)
-            {
-            rNodeImg = right.Draw();
-            rSize = rNodeImg.Size;
-            rCenter = right.center;
-        }
-        int maxHeight = (lSize.Height < rSize.Height) ? rSize.Height : lSize.Height;
-            if (maxHeight > 0) maxHeight += 35;
+            lNodeImg = left.Draw();<br>
+            lSize = lNodeImg.Size;<br>
+            this.center = lSize.Width;<br>
+            lCenter = left.center;<br>
+        }<br>
+            if (this.right != null)<br>
+            {<br>
+            rNodeImg = right.Draw();<br>
+            rSize = rNodeImg.Size;<br>
+            rCenter = right.center;<br>
+        }<br>
+        int maxHeight = (lSize.Height < rSize.Height) ? rSize.Height : lSize.Height;<br>
+            if (maxHeight > 0) maxHeight += 35;<br>
         Size resultSize = new Size(lSize.Width + rSize.Width, nodeBg.Size.Height +
-maxHeight);
-        Bitmap result = new Bitmap(resultSize.Width, resultSize.Height);
+maxHeight);<br>
+        Bitmap result = new Bitmap(resultSize.Width, resultSize.Height);<br>
 
-        Graphics g = Graphics.FromImage(result);
-        g.SmoothingMode = SmoothingMode.HighQuality;
-        g.FillRectangle(Brushes.White, new Rectangle(new Point(0, 0), resultSize));
-        g.DrawImage(nodeBg, lSize.Width - nodeBg.Width / 2, 0);
-        string str = "" + value;
+        Graphics g = Graphics.FromImage(result);<br>
+        g.SmoothingMode = SmoothingMode.HighQuality;<br>
+        g.FillRectangle(Brushes.White, new Rectangle(new Point(0, 0), resultSize));<br>
+        g.DrawImage(nodeBg, lSize.Width - nodeBg.Width / 2, 0);<br>
+        string str = "" + value;<br>
         g.DrawString(str, font, Brushes.Black, lSize.Width - nodeBg.Width / 2 + 7,
-       nodeBg.Height / 2f - 12);
-        Pen pen = new Pen(Brushes.Black, 1.2f);
-        float x1 = center;
-        float y1 = nodeBg.Height;
-        float y2 = nodeBg.Height + 35;
-        float x2 = lCenter;
-        var h = Math.Abs(y2 - y1);
-        var w = Math.Abs(x2 - x1);
-            if (lNodeImg != null)
-            {
-            g.DrawImage(lNodeImg, 0, nodeBg.Size.Height + 35);
-            var points1 = new List<PointF>
-{
+       nodeBg.Height / 2f - 12);<br>
+        Pen pen = new Pen(Brushes.Black, 1.2f);<br>
+        float x1 = center;<br>
+        float y1 = nodeBg.Height;<br>
+        float y2 = nodeBg.Height + 35;<br>
+        float x2 = lCenter;<br>
+        var h = Math.Abs(y2 - y1);<br>
+        var w = Math.Abs(x2 - x1);<br>
+            if (lNodeImg != null)<br>
+            {<br>
+            g.DrawImage(lNodeImg, 0, nodeBg.Size.Height + 35);<br>
+            var points1 = new List<PointF><br>
+{<br>
                 new PointF(x1, y1), new PointF(x1 - w / 6, y1 + h / 3.5f), new PointF(x2 + w / 6, y2 - h / 3.5f), new PointF(x2, y2), };
-            g.DrawCurve(pen, points1.ToArray(), 0.5f);
-        }
-        if (rNodeImg != null)
-        {
-            g.DrawImage(rNodeImg, lSize.Width, nodeBg.Size.Height + 35);
-            x2 = rCenter + lSize.Width;
-            w = Math.Abs(x2 - x1);
-            var points = new List<PointF>
-{
-new PointF(x1, y1), new PointF(x1 + w/6, y1 + h/3.5f), new PointF(x2 - w/6, y2 - h/3.5f), new PointF(x2, y2) };
-            g.DrawCurve(pen, points.ToArray(), 0.5f);
-        }
-        return result;
-    }
-    public bool Exists(int value)
-    {
-        bool res = value == this.value;
-        if (!res && left != null)
-            res = left.Exists(value);
-        if (!res && right != null)
-            res = right.Exists(value);
-        return res;
-    }
-}
+            g.DrawCurve(pen, points1.ToArray(), 0.5f);<br>
+        }<br>
+        if (rNodeImg != null)<br>
+        {<br><br>
+            g.DrawImage(rNodeImg, lSize.Width, nodeBg.Size.Height + 35);<br>
+            x2 = rCenter + lSize.Width;<br>
+            w = Math.Abs(x2 - x1);<br>
+            var points = new List<PointF><br>
+{<br><br>
+new P<br><br>ointF(x1, y1), new PointF(x1 + w/6, y1 + h/3.5f), new PointF(x2 - w/6, y2 - h/3.5f), new PointF(x2, y2) };
+            g.DrawCurve(pen, points.ToArray(), 0.5f);<br>
+        }<br><br>
+        return result;<br>
+    }<br>
+    public bool Exists(int value)<br>
+    {<br>
+        bool res = value == this.value;<br>
+        if (!res && left != null)<br>
+            res = left.Exists(value);<br>
+        if (!res && right != null)<br>
+            res = right.Exists(value);<br>
+        return res;<br>
+    }<br>
+}<br>
 
 
 
