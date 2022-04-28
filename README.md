@@ -1594,6 +1594,13 @@ new P<br><br>ointF(x1, y1), new PointF(x1 + w/6, y1 + h/3.5f), new PointF(x2 - w
         return res;<br>
     }<br>
 }<br>
+    
+    **output**
+    ![image](https://user-images.githubusercontent.com/98379636/165696151-195fab88-e7fa-4d21-8a7a-8e0eabcd8773.png)
+![image](https://user-images.githubusercontent.com/98379636/165696312-9b8e5641-3ae9-41fe-bbbc-3f5084cb8cae.png)
+![image](https://user-images.githubusercontent.com/98379636/165696435-5173b95d-e115-4a08-a4d9-3e67558664b7.png)
+![image](https://user-images.githubusercontent.com/98379636/165696559-4de52046-5920-4fff-ae69-8c06808e8689.png)
+
 
 
 
